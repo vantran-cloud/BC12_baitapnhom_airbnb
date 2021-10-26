@@ -1,23 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import Experience from "containers/client/Experience/Experience";
+import Home from "containers/client/Home/Home";
+import OnlineExperience from "containers/client/OnlineExperience/OnlineExperience";
+import Place from "containers/client/Place/Place";
+import "./App.css";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      {/* <Home />
+      <Place />
+      <Experience />
+      <OnlineExperience /> */}
+      <Router>
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route path="/place" component={Place} />
+          <Route path="/experience" component={Experience} />
+          <Route path="/onlineexperience" component={OnlineExperience} />
+        </Switch>
+      </Router>
     </div>
   );
 }
